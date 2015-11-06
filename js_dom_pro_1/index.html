@@ -49,9 +49,7 @@
 <div data-id="4" class="panel">content4</div>
 
 <script type="text/javascript">
-
 	var bar = document.getElementById('bar');
-
 	var clearSelected = function() {
 		var items = bar.getElementsByClassName('selected');
 		for (var i = 0; i < items.length; i++) {
@@ -59,7 +57,6 @@
 			item.setAttribute('class', 'item');
 		}
 	};
-
 	var showPanel = function(id) {
 		var items = document.getElementsByClassName('panel');
 		for (var i = 0; i < items.length; i++) {
@@ -72,7 +69,6 @@
 			}
 		}
 	};
-
 	var items = bar.getElementsByClassName('item');
 	for (var i = 0; i < items.length; i++) {
 		var item = items[i];

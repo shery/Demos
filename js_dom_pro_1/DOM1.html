@@ -25,8 +25,6 @@
             background: #D7DCE0;
             text-align: center;
             padding-left: 6px;
-
-            /*line-height: 40px;*/
         }
         li:first-child {
             margin-right: 4px;
@@ -48,7 +46,6 @@
             color: #d7dce0;
             border-color: #d7dce0;
         }
-
     </style>
     <title>DOM练习</title>
 </head>
@@ -67,12 +64,10 @@
         <li class="next"><a href="#">></a></li>
     </ul>
     <script type="text/javascript">
-        //声明部分
         var dom = document.getElementById('dom');
         var items = dom.getElementsByClassName('item');
         var previouses = dom.getElementsByClassName('previous');
         var nexts = dom.getElementsByClassName('next');
-        //函数部分
         var clearActive = function() {
             var actives = dom.getElementsByClassName('active'); 
             for (var i = 0; i < actives.length; i++) {
@@ -83,7 +78,7 @@
         var setPrevious = function(){
             var actives = dom.getElementsByClassName('active'); 
             var active = actives[0];
-            if (items[0] == active) { // is first item
+            if (items[0] == active) {
                 var lastItem = items[items.length -1];
                 clearActive();
                 lastItem.setAttribute('class', 'item active');
@@ -109,27 +104,6 @@
                 active.setAttribute('class', 'item active');
             }
         };
-        // for (var i = 0; i < items.length; i++) {
-        //     var item = items[i];
-        //     item.onclick = function(){
-        //         clearActive();
-        //         this.setAttribute('class', 'item active');
-        //     }
-        // }       
-        // for (var i = 0; i < previouses.length; i++) {
-        //     var previous = previouses[i];
-        //     previous.onclick = function(){
-        //         setPrevious();
-        //     };
-        // }
-        // for (var i = 0; i < nexts.length; i++) {
-        //     var next = nexts[i];
-        //     next.onclick = function(){
-        //         setNext();
-        //     };
-        // }
-
-        //事件绑定部分
         document.onclick = function(event){
             var target = event.target.parentNode;
             var isClass = target.getAttribute('class');
@@ -137,7 +111,6 @@
                 clearActive();
                 target.setAttribute('class', 'item active');
             } else if (isClass == 'previous') {
-                // clearActive();
                 setPrevious();
 
             } else if (isClass == 'next') {

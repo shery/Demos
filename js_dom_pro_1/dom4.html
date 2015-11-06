@@ -68,7 +68,6 @@
 <div class="dropdown" id="dropdown1"></div>
 <div class="dropdown" id="dropdown2"></div>
 <script type="text/javascript">
-	// Define Component
 	var Dropdown = function (){
 		this.getParent = function (dom, className){
 			do {
@@ -89,7 +88,6 @@
 			}
 		};
 		this.init = function (parent, items, selected){
-			// create dom
 			var that = this;
 			parent.dropdown = this;
 			this.parent = parent;
@@ -100,7 +98,6 @@
 			this.items = items;
 			this.tag.innerHTML = selected;
 			this.selectValue(selected);
-			// bind event
 			var itemDoms = this.parent.getElementsByTagName('li');
 			var clearSelected = function (){
 				var selected = that.parent.getElementsByClassName('selected')[0];
@@ -140,9 +137,6 @@
 					clearSelected();
 					this.setAttribute("class", "selected")
 					that.tag.innerHTML = target.innerHTML;
-					// if (that.onSelected) {
-					// 	that.onSelected(that.tag.innerHTML);
-					// }
 				};
 			}
 		};
@@ -154,25 +148,8 @@
 			return this.tag.innerHTML;
 		};
 	};
-	// Use Component
 	var dropdown1 = new Dropdown();
 	dropdown1.init(document.getElementById('dropdown1'), ['Choose hero', 'Spider Man', 'Wolverine','Captain America','X-Men','Crocodile'], 'Crocodile');
-	// dropdown1.setValue('Spider Man');
-	// dropdown1.setValue('Wolverine');
-	// alert(dropdown1.getValue()); // item1
-	// dropdown1.onSelected = function(value) {
-	// 	alert(value);
-	// };
-	// dropdown1.onShow = function() {
-	// 	alert('show1');
-	// };
-	// dropdown1.onHide = function() {
-	// 	alert('hide1');
-	// }
-
 	var dropdown2 = new Dropdown();
 	dropdown2.init(document.getElementById('dropdown2'), ['a', 'b', 'c'], 'a');
-	// dropdown2.onHide = function() {
-	// 	alert('hide2');
-	// }
 </script>
