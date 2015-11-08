@@ -12,7 +12,6 @@ $(document).ready(function(){
 	appendHtml = '';
 	for (i in items) {
 		var itemName = items[i];
-			// var $li = $("<li>" + "<a>" + itemName + "</a>" + "</li>")	
 		var className = '';
 		if (itemName === selected) {
 			className = 'class="selected"';
@@ -20,21 +19,6 @@ $(document).ready(function(){
 		appendHtml += "<li " + className + ">" + "<a>" + itemName + "</a>" + "</li>";
 	}
 	list.append(appendHtml);
-	// var selectValue = function (value){
-
-	// 	list.innerHTML = '';
-		// for (i in items) {
-		// 	var itemName = items[i];
-		// 	var item = document.createElement('li');
-		// 	if (itemName == value) {
-		// 		item.setAttribute('class', 'selected');
-		// 	}
-		// 	item.innerHTML = '<a>' + itemName + '</a>';
-		// 	list.appendChild(item);
-	// 	}
-	// };
-
- 	// selectValue(selected);
  	tag.click(function(event){
  		list.fadeToggle("slow");
  		event.stopPropagation();
